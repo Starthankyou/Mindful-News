@@ -1,0 +1,83 @@
+{
+  "id": "card-2025-01-15",
+  "date": "2025-01-15",
+  "quote": {
+    "id": "quote-001",
+    "english": "The future belongs to those who believe in the beauty of their dreams.",
+    "chinese": "未來屬於那些相信自己夢想之美的人。",
+    "sourceType": "speech"
+  },
+  "summary": [
+    "研究顯示，有明確目標的人更容易達成長期成就",
+    "將大目標分解成小步驟，能有效降低焦慮感",
+    "每日反思與記錄，有助於維持動力與方向感",
+    "社群支持與分享，可以加速個人成長",
+    "失敗是學習的一部分，關鍵在於如何調整與前進"
+  ],
+  "passages": [
+    {
+      "id": "passage-001",
+      "english": "According to recent psychological studies, individuals who set clear and achievable goals are 42% more likely to succeed in their endeavors. The key is not just setting goals, but breaking them down into manageable daily actions.",
+      "chinese": "根據最近的心理學研究，設定清晰且可達成目標的人，成功機率高出 42%。關鍵不僅在於設定目標，更在於將目標拆解為每日可管理的行動。",
+      "order": 1
+    },
+    {
+      "id": "passage-002",
+      "english": "Journaling has been proven to enhance mental clarity and emotional well-being. By reflecting on daily experiences, we create space for growth and learning from both successes and setbacks.",
+      "chinese": "日誌書寫已被證實能提升心智清晰度與情緒健康。透過反思每日經驗，我們為成長與從成功或挫折中學習創造了空間。",
+      "order": 2
+    }
+  ],
+  "vocabulary": [
+    {
+      "word": "endeavor",
+      "definition": "(n.) 努力、嘗試 / (v.) 努力去做",
+      "example": "We must endeavor to achieve our goals."
+    },
+    {
+      "word": "manageable",
+      "definition": "(adj.) 可管理的、可處理的",
+      "example": "Break tasks into manageable pieces."
+    },
+    {
+      "word": "clarity",
+      "definition": "(n.) 清晰、明確",
+      "example": "The article provides clarity on complex issues."
+    },
+    {
+      "word": "setback",
+      "definition": "(n.) 挫折、阻礙",
+      "example": "Don't let setbacks stop your progress."
+    }
+  ],
+  "grammar": {
+    "sentence": "Individuals who set clear goals are more likely to succeed.",
+    "explanation": "這個句子使用了 'be likely to + 原形動詞' 的結構，表示「可能做某事」。who 引導的關係子句用來描述 individuals。"
+  },
+  "comprehensionQuestions": [
+    {
+      "id": "q1",
+      "question": "根據文章，設定明確目標的人成功機率提高多少？",
+      "options": [
+        "32%",
+        "42%",
+        "52%",
+        "62%"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": "q2",
+      "question": "下列何者是達成目標的關鍵？",
+      "options": [
+        "只要設定目標就好",
+        "將目標拆解為每日行動",
+        "告訴越多人越好",
+        "不要反思過去"
+      ],
+      "correctAnswer": 1
+    }
+  ],
+  "lifeApplicationQuestion": "你目前有什麼想達成的目標？可以如何拆解成今天就能開始的小行動？",
+  "actionSuggestion": "今天花 5 分鐘，寫下一個你想達成的目標，並列出三個可以立即開始的小步驟。"
+}
