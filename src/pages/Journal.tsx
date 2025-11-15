@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getReflections } from '../utils/localStorage';
 import { UserReflection } from '../types';
+import Card from '../components/Common/Card';
 
 export default function Journal() {
   const [reflections, setReflections] = useState<UserReflection[]>([]);
@@ -15,25 +16,30 @@ export default function Journal() {
     return (
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">我的日誌</h1>
-        <div className="card-mindful text-center py-12">
-          <p className="text-gray-500">還沒有任何記錄</p>
-          <p className="text-sm text-gray-400 mt-2">
-            完成每日資訊卡的反思後，記錄就會顯示在這裡
-          </p>
-        </div>
+        <Card>
+          <div className="text-center py-8">
+            <p className="text-gray-500">還沒有任何記錄</p>
+            <p className="text-sm text-gray-400 mt-2">
+              完成每日資訊卡的反思後，記錄就會顯示在這裡
+            </p>
+          </div>
+        </Card>
       </div>
     );
   }
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">我的日誌</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold text-gray-800">我的日誌</h1>
+        <span className="text-sm text-gray-500">共 {reflections.length} 筆記錄</span>
+      </div>
 
       <div className="space-y-4">
         {reflections.map(reflection => (
-          <div key={reflection.cardId} className="card-mindful">
+          <Card key={reflection.cardId}>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-sm text-gray-500">{reflection.date}</span>
+              <span className="text-sm font-medium text-blue-600">{reflection.date}</span>
             </div>
 
             {reflection.inspiration && (
@@ -56,7 +62,7 @@ export default function Journal() {
                 <p className="text-gray-700">{reflection.myAction}</p>
               </div>
             )}
-          </div>
+          </Card>
         ))}
       </div>
     </div>

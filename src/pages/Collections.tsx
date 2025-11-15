@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getCollections, removeCollection } from '../utils/localStorage';
 import { CollectionItem, Quote } from '../types';
+import { useToast } from '../components/Common/Toast';
+import Card from '../components/Common/Card';
+import Button from '../components/Common/Button';
 
 export default function Collections() {
   const [collections, setCollections] = useState<CollectionItem[]>([]);
+  const { showToast } = useToast();
 
   const loadCollections = () => {
     const data = getCollections();
@@ -17,29 +21,35 @@ export default function Collections() {
   const handleRemove = (id: string) => {
     removeCollection(id);
     loadCollections();
+    showToast('已移除收藏', 'success');
   };
 
   if (collections.length === 0) {
     return (
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">我的收藏</h1>
-        <div className="card-mindful text-center py-12">
-          <p className="text-gray-500">還沒有任何收藏</p>
-          <p className="text-sm text-gray-400 mt-2">
-            在今日資訊卡中收藏金句或行動建議吧
-          </p>
-        </div>
+        <Card>
+          <div className="text-center py-8">
+            <p className="text-gray-500">還沒有任何收藏</p>
+            <p className="text-sm text-gray-400 mt-2">
+              在今日資訊卡中收藏金句或行動建議吧
+            </p>
+          </div>
+        </Card>
       </div>
     );
   }
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">我的收藏</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold text-gray-800">我的收藏</h1>
+        <span className="text-sm text-gray-500">共 {collections.length} 項收藏</span>
+      </div>
 
       <div className="space-y-4">
         {collections.map(item => (
-          <div key={item.id} className="card-mindful">
+          <Card key={item.id}>
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 {/* 金句 */}
@@ -78,14 +88,16 @@ export default function Collections() {
                 </p>
               </div>
 
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => handleRemove(item.id)}
-                className="ml-4 text-gray-400 hover:text-red-500 transition-colors"
+                className="ml-4 text-gray-400 hover:text-red-500"
               >
                 🗑️
-              </button>
+              </Button>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </div>

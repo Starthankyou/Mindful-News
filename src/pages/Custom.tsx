@@ -1,9 +1,11 @@
+import Card from '../components/Common/Card';
+
 export default function Custom() {
   return (
     <div className="max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">自訂輸入</h1>
 
-      <div className="card-mindful">
+      <Card>
         <p className="text-gray-600 mb-4">
           此功能尚未開放，未來將支援：
         </p>
@@ -27,7 +29,7 @@ export default function Custom() {
             💡 提示：目前專注於完善核心功能，敬請期待！
           </p>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }
